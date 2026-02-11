@@ -1,0 +1,354 @@
+/* General Guidelines:
+   - Use the provided purple color (#6f5eff) where applicable.
+   - The default font family for HW1 should be Arial, sans-serif.
+*/
+
+/* Typography: */
+/* 
+"House Design" title 
+    font-size: 1.5rem;
+    font-weight: bold;
+"House Styling" title 
+    font-size: 20px;
+Footer section headings: 'Store Info', 'About', 'Account', 'Policy'
+    font-size: 14px;
+Footer content 
+    font-size: 14px;
+For all other text, if not specified above, any approximate font size is acceptable. 
+*/
+
+/* TO-DO */
+
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    background-color: #a90606;
+}
+
+header.stay {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgb(8, 67, 26);
+
+    border: 2px solid #3bf90c91; /* light gray border */
+    border-radius: 8px;      /* slightly rounded corners */
+    box-shadow: 0 4px 8px rgba(245, 98, 13, 0.1); /* soft shadow */
+}
+
+.container {
+    position: relative;
+    z-index: 10;
+    background-color: rgb(8, 67, 26);
+    padding: 20px;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 1.5rem; 
+    font-weight: bold;
+    margin: 0;
+    padding-bottom: 10px;
+    color: white;
+}
+
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgb(254, 252, 252);
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15rem; 
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: rgb(72, 36, 6);
+}
+
+.section1,
+.section2 {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    transform-style: preserve-3d;
+    z-index: 0;
+}
+
+
+.section1::before {
+    padding-top: 120px;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: url("image/13.png");
+    background-position: center center;
+    background-size: cover;
+    transform: translateZ(-1px) scale(1.8);
+}
+
+.button {
+    background-color: #6f5eff;
+    color: white;
+    width: 65px;
+    height: 30px;
+    border: none;
+    border-radius: 0.2rem;
+}
+
+.button:hover {
+    background-color: #5948cc;
+}
+
+
+.text {
+    position: relative;
+    padding: 2rem;
+    color: #000;
+    font-size: 1.2rem;
+    z-index: 1;
+}
+
+.content {
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    margin-top: -50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.content img {
+    display: block;
+    width: 99%;
+    height: 85%;
+    margin: auto;
+}
+
+
+.style {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+
+    border: 1px solid #ccc; 
+    border-radius: 8px;     
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    
+    padding: 1rem;         
+    margin: 3rem;            
+    background-color: #fff; 
+    width: 500px;
+    height: 600px;
+}
+
+.footer-container {
+    position: relative;
+    /*background-color: rgb(9, 101, 10);*/
+    background-color: #fff;
+    padding-bottom: 3rem;
+    z-index: 0;
+}
+
+/* Gradient at the TOP 
+.footer-container::before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px; 
+
+    background: linear-gradient(
+        to bottom,
+        #f3ffe8 0%,   
+        rgba(9,101,10,0.8) 60%,
+        rgba(9,101,10,1) 100%
+    );
+
+    pointer-events: none; 
+} */
+
+.footer {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding-top: 120px;
+}
+
+.footer-heading {
+    display: flex;
+    flex-direction: column;
+    margin-right: 7rem;
+    line-height: 2.5;
+    font-size: 0.8rem;
+}
+
+.footer-heading button {
+    margin-top: 1rem;
+    background-color: #6f5eff; 
+    color: white;
+    border: none;
+    border-radius: 15px;
+    width: 115px;
+    height: 30px;
+    font-size: 0.85rem;
+}
+
+.w3-cursive h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem; /* I recommend making it a bit bigger since cursive is thinner */
+    color: #faf8f8; /* Optional: A nice Valentine's red/pink! */
+}
+
+.box {
+    display: inline-block;   /* shrink-wrap to content */
+    padding: 0;              /* remove padding so image fits exactly */
+    margin: 3rem auto;
+    
+    border: 1px solid #ccc;
+    border-radius: 35px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    /*box-shadow:
+    0 15px 40px rgba(210, 246, 28, 0.5),
+    0 25px 60px rgba(207, 240, 46, 0.3);*/
+    box-shadow:
+    0 15px 40px rgba(42, 29, 2, 0.862),
+    0 40px 70px rgba(64, 37, 2, 0.747);
+}
+
+
+
+.box img {
+    display: block;          /* removes bottom whitespace */
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;     /* match box corners */
+}
+
+
+.section2 {
+    /*background-color: #f3ffe8;*/
+    background-color: rgb(8, 67, 26);
+}
+
+ 
+.valentine-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: #d71515;
+    text-align: center;
+    margin-top: 4rem;
+
+    /* typing effect magic */
+    overflow: hidden;              /* hides text as it types */
+    white-space: nowrap;           /* keeps text on one line */
+    border-right: 3px solid #d71515; /* cursor */
+    width: 0;
+    animation: typing 15s steps(28, end) forwards,
+               blink 0.75s step-end infinite;
+}
+
+/* typing animation */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* blinking cursor */
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.valentine-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;           /* space between buttons */
+    margin-top: 2rem;
+    position: relative;
+}
+
+
+/* CSS */
+.button-32 {
+    background-color: #45b412;
+    border-radius: 12px;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 8px 20px;   /* smaller padding */
+    text-align: center;
+    transition: 200ms;
+    width: auto;         /* 👈 remove 100% */
+    font-size: 14px;     /* slightly smaller text */
+    position: relative;
+  }
+  
+
+.button-32:not(:disabled):hover,
+.button-32:not(:disabled):focus {
+  outline: 0;
+  background: #f46703;
+  box-shadow: 0 0 0 2px rgba(0,0,0,.2), 0 3px 8px 0 rgba(0,0,0,.15);
+}
+
+.button-32:disabled {
+  filter: saturate(0.2) opacity(0.5);
+  -webkit-filter: saturate(0.2) opacity(0.5);
+  cursor: not-allowed;
+}
+
+.floating-heart {
+    position: fixed;
+    font-size: 20px;
+    pointer-events: none;
+    animation: floatUp 1.5s ease-out forwards;
+    z-index: 9999;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120px) scale(1.8);
+        opacity: 0;
+    }
+}

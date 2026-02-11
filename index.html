@@ -1,0 +1,133 @@
+<!-- TO-DO -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Happy Valentines!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+
+    <body>
+        <header class="stay">
+        <div class = "w3-cursive">
+        <h1>Mi Amer <3</h1>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li>The candence of my life</li>
+            </ul>
+        </nav>
+        
+        </header>
+
+      <div class="section1">
+        <div class="backgroundimg"></div>
+      </div>
+
+        <div class="section2">
+        <section class="content">
+            <div>
+            <div class="style">
+                <img src="image/We.png" alt="first image">
+                <p>I</p>
+            </div>
+
+            <div class="style">
+                <img src="image/Made.png" alt="first image">
+                <p>You</p>
+            </div>
+            </div>
+
+            <div>
+            <div class="style">
+                <img src="image/Are.png" alt="first image">
+                <p>Love</p>
+            </div>
+            <div class="style">
+                <img src="image/For.png" alt="first image">
+                <p>Amer &#10084;</p>
+            </div>
+            
+            </div>
+        </section>
+        </div>
+
+        <div class="footer-container">
+           <div class="footer">
+            
+                <div class="box">
+                    <img src="image/Each Other.png" alt="first image">
+                </div>
+
+           </div>
+
+           <div>
+                <div class="valentine-text">
+                    Will you be my valentine?
+                </div>
+                <div class="valentine-buttons">
+                    <button class="button-32" id="runaway-btn" role="button">YES!!!</button>
+                    <button class="button-32" id="runaway-btn-2" role="button">YASSS</button>
+                </div>
+        </div>
+          
+
+        <script>
+            const buttons = document.querySelectorAll(".button-32");
+            
+            buttons.forEach(button => {
+                button.addEventListener("click", function(e) {
+                    for (let i = 0; i < 6; i++) {
+                        const heart = document.createElement("div");
+                        heart.classList.add("floating-heart");
+                        heart.innerHTML = "💖";
+            
+                        heart.style.left = (e.clientX + (Math.random() * 60 - 30)) + "px";
+                        heart.style.top = (e.clientY + (Math.random() * 20 - 10)) + "px";
+            
+                        document.body.appendChild(heart);
+            
+                        setTimeout(() => {
+                            heart.remove();
+                        }, 1500);
+                    }
+                });
+            });
+            </script>
+            
+        
+            <script>
+                const footerContainer = document.querySelector(".footer-container");
+                
+                // Grab all buttons we want to make run away
+                const runawayButtons = document.querySelectorAll(".button-32");
+                
+                runawayButtons.forEach(button => {
+                    button.addEventListener("mouseenter", () => {
+                        const containerRect = footerContainer.getBoundingClientRect();
+                        const buttonWidth = button.offsetWidth;
+                        const buttonHeight = button.offsetHeight;
+                
+                        const maxX = containerRect.width - buttonWidth;
+                        const maxY = containerRect.height - buttonHeight;
+                
+                        const randomX = Math.floor(Math.random() * maxX);
+                        const randomY = Math.floor(Math.random() * maxY);
+                
+                        button.style.position = "absolute";
+                        button.style.left = randomX + "px";
+                        button.style.top = randomY + "px";
+                    });
+                });
+                </script>
+                
+                
+                
+    
+        
+    </body>
+</html>
+               
